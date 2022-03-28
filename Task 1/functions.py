@@ -19,7 +19,7 @@ def evaluate_model(
     comparison. Also allows classification report to be printed and metrics
     printed as well.
 
-    Arguments:
+    Args:
         model: model to evaluate
         X (pd.DataFrame): dataframe to create predictions
         y : used to compare prediction against these true values
@@ -40,12 +40,12 @@ def evaluate_model(
 
     # Calculates model metrics: roc, accuracy, precision, recall
     metrics = {
-        "roc": roc_auc_score(
+        "ROC": roc_auc_score(
             y, y_pred_proba, average="macro", multi_class="ovr"
         ),
-        "accuracy": accuracy_score(y, y_pred),
-        "precision": precision_score(y, y_pred, average="macro"),
-        "recall": recall_score(y, y_pred, average="macro"),
+        "Accuracy": accuracy_score(y, y_pred),
+        "Precision": precision_score(y, y_pred, average="macro"),
+        "Recall": recall_score(y, y_pred, average="macro"),
     }
 
     if print_metrics:
