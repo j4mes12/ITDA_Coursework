@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{fancyhdr, lastpage, graphicx, wrapfig, subcaption, setspace, booktabs, sectsty, amsmath, amsthm, amssymb, enumitem, url,empheq,mathrsfs,float, listings, color, natbib, wrapfig}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	linktocpage
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\leftmark}
+\rfoot{Page \thepage}
+
+\bibliographystyle{dinat}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+\newcommand\mi{%
+	\medbreak \noindent%
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\begin{document}
+	\title{
+	\HRule{0.5pt} \\
+	\LARGE \textbf{\uppercase{An Analysis of Binary Segmentation for change point detection of mean and variance}}
+	\HRule{2pt} \\ [0.5cm]
+	\normalsize \textsc{ Level M/7 20cp Project} \vspace*{5\baselineskip}\\ [4cm]}
+	\author{
+		James Stephenson \\
+		Student ID: 1608173\\
+		Supervisor: Dr. Haeran Cho \\ 
+		University of Bristol \\
+		School of Mathematics }
+	\maketitle \newpage 
+		
+	\tableofcontents
+	\newpage
+	
+	\section{Task 1}
+	 
+
+	\newpage
+		
+	\bibliography{mybib}
+\end{document}
