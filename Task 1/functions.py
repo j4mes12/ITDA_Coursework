@@ -54,3 +54,35 @@ def evaluate_model(
             print(f"{k.upper()}: {round(v, 5)}")
     else:
         return metrics
+
+
+def evaluate_model_on_ttv(model, datasets: dict, eval_val: bool = False):
+    """Evaluates model for each dataset and produces a dataframe displaying
+    the metrics
+
+    Args:
+        model: model to evaluate
+        datasets (dict): dictionary of the split datasets
+        eval_val (bool): flags if we also want validation tested.
+            Defaults to False.
+
+    Returns:
+        _type_: _description_
+    """
+
+    train_data = datasets["train"]
+    test_data = datasets["test"]
+    val_data = datasets["val"]
+
+    model_metrics = {
+        "Train": evaluate_model(model, **train_data),
+        "Test": evaluate_model(model, **test_data),
+    }
+
+    if eval_val:
+        model_metrics["Validation"] = (evaluate_model(model, **val_data),)
+
+    print("--- Model Metrics for Datasets --- ")
+
+    # Return metrics in a dataframe
+    return pd.DataFrame(model_metrics).T
