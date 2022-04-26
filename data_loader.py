@@ -128,7 +128,7 @@ def import_task2_data():
     ) = train_test_split(
         sentences_ner,
         labels_ner,
-        test_size=0.2,
+        test_size=0.25,
     )
 
     return (
