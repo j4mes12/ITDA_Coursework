@@ -56,7 +56,7 @@ def evaluate_model(
         return metrics
 
 
-def evaluate_model_on_ttv(model, datasets: dict, eval_val: bool = False):
+def evaluate_model_on_ttv(model, datasets: dict, eval_test: bool = False):
     """Evaluates model for each dataset and produces a dataframe displaying
     the metrics
 
@@ -76,11 +76,11 @@ def evaluate_model_on_ttv(model, datasets: dict, eval_val: bool = False):
 
     model_metrics = {
         "Train": evaluate_model(model, **train_data),
-        "Test": evaluate_model(model, **test_data),
+        "Validation": evaluate_model(model, **val_data),
     }
 
-    if eval_val:
-        model_metrics["Validation"] = (evaluate_model(model, **val_data),)
+    if eval_test:
+        model_metrics["Validation"] = (evaluate_model(model, **test_data),)
 
     print("--- Model Metrics for Datasets --- ")
 
